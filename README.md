@@ -18,6 +18,7 @@ Set `APPLY_ON_START = true` to apply once on launch. -- this is currently not wo
 
 ### Attempted but not implemented
 Hotkeys to fit page width/height to window. These view actions didn’t respond on my build, so I left them out.
+Please note the at there is a function ```app.setZoom``` that greatly simplifies the code, but it's currently (Sep 2025) available only in the nightly build. I will look into publishing a version that takes advantage of the function.
 
 ## Dependencies for plugins: 
 - Xournal++ (with plugin support enabled)
