@@ -26,8 +26,13 @@ You will need a Lua runtime environment. I didn't have luck finding a .zip packa
 [www.lua.org](https://www.lua.org/about.html)
 "Lua is a powerful, efficient, lightweight, embeddable scripting language. It supports several programming styles: procedural, object-oriented, functional, data-driven, and data description."
 
+# What is Xournal++?
+[Xournal++](https://github.com/xournalpp)
+"Xournal++ is a handwriting notetaking software with PDF annotation support. Written in C++ with GTK3, supporting Linux (e.g. Ubuntu, Debian, Arch, SUSE), macOS and Windows 10. Supports pen input from devices such as Wacom Tablets."
+
 ## Other tools used:
 [Zettlr](https://www.zettlr.com/)
+
 [Notepad++](https://notepad-plus-plus.org/)
 
 Lua code written with the assistance of chatGPT
