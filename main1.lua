@@ -53,7 +53,17 @@ end
 local function applyPreset()
   if not ensureDocOpen() then return end
 
-  -- Normalize to 100% if possible; if not, presses become relative to current zoom.
+  -- 1) Try the nightly API directly (factor: 0.74 = 74%)
+  local ok = pcall(function()
+    if type(app.setZoom) == "function" then
+      app.setZoom(TARGET_FACTOR)
+    else
+      error("setZoom not available")
+    end
+  end)
+  if ok then return end
+
+  -- 2) Fallback for stable builds: reset to 100% (if possible), then step IN/OUT
   runOne(A_ZOOM_100)
 
   local n, dir = pressesFrom100(TARGET_FACTOR)
@@ -62,15 +72,6 @@ local function applyPreset()
   else
     for _ = 1, n do if not runOne(A_ZOOM_OUT) then break end end
   end
-end
-
--- Optional gentle startup apply (off by default)
-local function applySoon()
-  local okLgi, lgi = pcall(require, "lgi")
-  if not okLgi then return end
-  local GLib = lgi.GLib
-  GLib.timeout_add(GLib.PRIORITY_DEFAULT, 300, function() applyPreset(); return false end)
-  GLib.timeout_add(GLib.PRIORITY_DEFAULT,1000, function() applyPreset(); return false end)
 end
 
 function quickzoom_preset() applyPreset() end
