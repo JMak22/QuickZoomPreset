@@ -7,7 +7,7 @@ Sets the **view zoom** to a preset percentage (no document size or template chan
 Put `plugin.ini` and `main1.lua` in `…\AppData\Local\xournalpp\plugins\QuickPresetZoom\`, enable in **Plugins → Plugin Manager**, restart Xournal++
 
 **Configure:** 
-Open `main1.lua` with Notepad or your text editor of choice, edit `PRESET_PERCENT` (e.g., 74 or 134). If your zoom step isn’t the default 10%, adjust `STEP_PERCENT`
+Open `main1.lua` with Notepad or your text editor of choice, edit `PRESET_PERCENT` (e.g., 74 or 134). If your zoom step isn’t the default 10%, adjust `STEP_PERCENT`. If your `STEP_PERCENT` is set to 0, by some chance, the plugin will not work.
 
 **Use:** 
 **Plugins → QuickZoom: Preset X%** 
@@ -18,7 +18,6 @@ Set `APPLY_ON_START = true` to apply once on launch. -- this is currently not wo
 
 ### Attempted but not implemented
 Hotkeys to fit page width/height to window. These view actions didn’t respond on my build, so I left them out.
-Please note the at there is a function ```app.setZoom``` that greatly simplifies the code, but it's currently (Sep 2025) available only in the nightly build. I will look into publishing a version that takes advantage of the function.
 
 ## Dependencies for plugins: 
 - Xournal++ (with plugin support enabled)
